@@ -55,7 +55,16 @@ function status {
 function branches {
     git branch -a
 }
-
+Function commit
+{
+    param (
+        [parameter(mandatory=$true, Position=0)] `
+        [String]$Message
+    )
+    process {
+        git commit -m $Message
+    }
+}
 
 <# utilities #>
 #region UTILITIES
